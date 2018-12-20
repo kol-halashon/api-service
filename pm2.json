@@ -1,0 +1,8 @@
+{
+  "apps": [
+        {
+          "name": "appraisal",
+          "script": "./app.js"
+        }
+    ]
+}
