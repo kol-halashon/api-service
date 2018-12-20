@@ -1,17 +1,9 @@
 const express = require('express');
 
 const routerExtendRes = require('./router-extend-res');
-const actionsRouter = require('./actions');
-const appraisalRouter = require('./appraisal');
-const customerRouter = require('./customer');
-const fileRouter = require('./file');
 const login = require('./login');
 const projectRouter = require('./project');
-const ownerRouter = require('./owner');
-const realEstateInformation = require('./real-estate-information');
-const searchRouter = require('./search');
 const signUpRouter = require('./sign-up');
-const taskRouter = require('./task');
 const userRouter = require('./user');
 
 const router = express.Router();
@@ -41,16 +33,8 @@ let logout = (req, res, next) => {
 router.use('/is-authenticated', isAuthenticated);
 router.use('/login', login);
 router.use('/logout', logout);
-router.use('/actions', checkAuthentication, actionsRouter);
-router.use('/appraisal', checkAuthentication, appraisalRouter);
-router.use('/customer', checkAuthentication, customerRouter);
-router.use('/file', checkAuthentication, fileRouter);
 router.use('/project', checkAuthentication, projectRouter);
-router.use('/owner', checkAuthentication, ownerRouter);
-router.use('/real-estate-information', checkAuthentication, realEstateInformation);
-router.use('/search', checkAuthentication, searchRouter);
 router.use('/sign-up', signUpRouter);
-router.use('/task', checkAuthentication, taskRouter);
 router.use('/user', checkAuthentication, userRouter);
 
 router.get('/', (req, res) => {

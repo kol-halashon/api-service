@@ -1,8 +1,8 @@
 {
   "apps": [
-        {
-          "name": "appraisal",
-          "script": "./app.js"
-        }
-    ]
+    {
+      "name": "app",
+      "script": "./app.js"
+    }
+  ]
 }
