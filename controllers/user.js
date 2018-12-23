@@ -66,21 +66,20 @@ class UserCtrl {
   }
 
   static findById (id) {
-    return User.findById(id)
-  });
-}
+    return User.findById(id);
+  }
 
-  static changePassword(password, userId) {
-  return User.findById(userId)
-    .then((userResult) => {
-      return userResult.update({ password: password });
-    })
-    .then((user) => removeUserPassword(user));
-}
+  static changePassword (password, userId) {
+    return User.findById(userId)
+      .then((userResult) => {
+        return userResult.update({ password: password });
+      })
+      .then((user) => removeUserPassword(user));
+  }
 
-  static comparePassword(password, hash) {
-  return bcrypt.compareSync(password, hash);
-}
+  static comparePassword (password, hash) {
+    return bcrypt.compareSync(password, hash);
+  }
 }
 
 module.exports = UserCtrl;
